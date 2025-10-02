@@ -4,38 +4,46 @@
 Este documento descreve a estrutura em camadas do arquivo `metadados.json`, que é publicado neste repositório para disponibilizar publicamente os metadados dos louvores, seus arranjos e materiais associados.
 
 ## Visão geral em camadas
-- **Camada 1 — Louvor (`louvor`)**: reúne as informações principais de um louvor específico.
+- **Camada 0 — Catálogo (`louvores`)**: objeto raiz contendo a lista de louvores.
+- **Camada 1 — Louvor**: reúne as informações principais de um louvor específico.
 - **Camada 2 — Arranjos (`arranjos`)**: lista cada arranjo disponível para o louvor.
 - **Camada 3 — Materiais (`materiais`)**: agrega os recursos vinculados a um arranjo, como partituras, áudios ou vídeos.
 
 ## Exemplo estrutural
-```json
 {
-  "nome": "nomeDoRepositorio",
-  "versao": "0.1.0",
-  "louvor": {
-    "id": "idLouvor",
-    "nome": "nomeLouvor",
-    "outrosNomes": ["nomeAlternativo1", "nomeAlternativo2"],
-    "arranjos": [
-      {
-        "titulo": "tituloArranjo",
-        "dataUltimaAlteracao": "2025-10-02",
-        "materiais": [
-          {
-            "titulo": "tituloMaterial",
-            "categoria": "categoriaMaterial",
-            "tipo": "pdf",
-            "url": "https://link.para/o/material.pdf"
-          }
-        ]
-      }
+  "louvores": [
+    {
+      "id": "idLouvor",
+      "nome": "nomeLouvor",
+      "outrosNomes": ["nomeAlternativo1", "nomeAlternativo2"],
+      "arranjos": [
+        {
+          "titulo": "tituloArranjo",
+          "dataUltimaAlteracao": "2025-10-02",
+          "materiais": [
+            {
+              "titulo": "tituloMaterial",
+              "categoria": "categoriaMaterial",
+              "tipo": "pdf",
+              "url": "https://link.para/o/material.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
     ]
   }
 }
 ```
 
 ## Detalhamento dos campos
+### Objeto raiz
+| Campo | Tipo | Obrigatório | Descrição |
+| ----- | ---- | ----------- | --------- |
+| `louvores` | array de objetos | Sim | Lista de louvores catalogados. Cada item segue a estrutura descrita abaixo. |
+
 ### Objeto `louvor`
 | Campo | Tipo | Obrigatório | Descrição |
 | ----- | ---- | ----------- | --------- |
