@@ -11,6 +11,8 @@ Este documento descreve a estrutura em camadas do arquivo `metadados.json`, que 
 ## Exemplo estrutural
 ```json
 {
+  "nome": "nomeDoRepositorio",
+  "versao": "0.1.0",
   "louvor": {
     "id": "idLouvor",
     "nome": "nomeLouvor",
