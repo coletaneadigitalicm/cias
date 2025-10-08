@@ -33,9 +33,7 @@ Este documento descreve a estrutura em camadas do arquivo `metadados.json`, que 
     }
   ]
 }
-    ]
-  }
-}
+
 ```
 
 ## Detalhamento dos campos
